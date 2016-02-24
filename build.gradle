@@ -10,6 +10,14 @@ buildscript {
 jar {
     baseName = rootProject.name
     version =  '0.1.0'
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    manifest {
+        attributes("Main-Class": "com.thoughtworks.mongo.demo.Application")
+    }
 }
 
 repositories {

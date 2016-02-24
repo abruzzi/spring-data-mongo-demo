@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+jar {
+    baseName = rootProject.name
+    version =  '0.1.0'
+}
+
+repositories {
+    jcenter()
+
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.13'
+    compile 'org.springframework:spring-context:4.2.4.RELEASE'
+    compile 'org.springframework.data:spring-data-mongodb:1.8.4.RELEASE'
+}

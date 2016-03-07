@@ -1,4 +1,4 @@
-package com.thoughtworks.mongo.demo;
+package com.thoughtworks.mongo.model;
 
 import org.springframework.data.annotation.Id;
 

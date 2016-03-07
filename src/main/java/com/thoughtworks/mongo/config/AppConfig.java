@@ -1,10 +1,11 @@
-package com.thoughtworks.mongo.demo;
+package com.thoughtworks.mongo.config;
 
 import com.mongodb.MongoClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.data.mongodb.MongoDbFactory;
@@ -12,7 +13,10 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
 @Configuration
-@PropertySource("classpath:application.properties")
+@PropertySources({
+        @PropertySource(value = "classpath:application.properties"),
+        @PropertySource(value = "file:/etc/spring-mongo/application.properties", ignoreResourceNotFound=true)
+})
 public class AppConfig {
     @Autowired
     private Environment environment;

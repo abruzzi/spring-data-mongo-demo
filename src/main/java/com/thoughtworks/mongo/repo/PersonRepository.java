@@ -1,5 +1,6 @@
-package com.thoughtworks.mongo.demo;
+package com.thoughtworks.mongo.repo;
 
+import com.thoughtworks.mongo.model.Person;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
